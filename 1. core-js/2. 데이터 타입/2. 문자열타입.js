@@ -45,4 +45,4 @@ var day = 1;
 var anniversary = '삼일절';
 
 console.log(month + '월 ' + day + '일은 ' + anniversary + '입니다.');
-console.log(`${month}월 ${day}일은 ${anniversary}입니다.`);
+console.log(`${month}월 ${day}일은 ${anniversary}입니다.`); //jsp에서는 ` 사이에서 \$로 표현

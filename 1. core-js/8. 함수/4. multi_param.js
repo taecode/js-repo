@@ -17,7 +17,7 @@ function addAll(numbers) {
 }
 
 // ES6+ 문법
-function addAll2(...numbers) {
+function addAll2(...numbers) { //알아서 배열 처리 
     var total = 0;
     for (var n of numbers) {
         total += n;

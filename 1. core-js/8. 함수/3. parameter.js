@@ -27,7 +27,7 @@ console.log(`result3: ${calcRangeTotal(1, 100)}`);
 
 //매개변수의 기본값
 
-function sayHello(language='한국어') {
+function sayHello(language='한국어') { //아무것도 안들어오면 한국어로 처리
     // console.log(`lang: ${language}`);
 
     // ES5

@@ -1,6 +1,6 @@
 
 
-// 상수: 불변의 고정값
+// 상수: 불변의 고정값(final), 유일성(static)
 const SALE_RATE = 0.2; //할인율 20%
 
 const PI = 3.14159265; //원주율
@@ -25,6 +25,6 @@ console.log(person);
 
 const a = 10;
 
-for (let i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) { //바뀌어야하는 값 let
     
 }
