@@ -21,12 +21,13 @@ console.log(increase()); // 2
 const c = (function() {
     let num = 0;
 
-    return {
+    return {  //객체로 묶어서 리턴 
         increase: () => ++num,
         decrease: () => --num
     };
 })();
 
+//c는 객체 
 console.log(c.increase());
 console.log(c.increase());
 console.log(c.increase());

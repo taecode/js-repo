@@ -2,8 +2,8 @@
 var x = 10;
 
 function foo() {
-    var y = 3;    
-    var z = y ** 2;
+    var y = 3;       
+    var z = y ** 2;  //y,z는 지역 변수 
 }
 
 console.log(x);

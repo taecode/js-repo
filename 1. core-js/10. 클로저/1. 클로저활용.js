@@ -1,68 +1,51 @@
-
 /*
+//카운팅 변수
+let num=0; //전역 변수
 
--- num이 전역변수라서 increase함수 이외에도 
-   num의 상태값을 변경시킬 가능성이 존재한다.
-
-// 카운팅
-let num = 0; // 카운트 상태 변수
-
-// 카운트 상태 변경 함수
-const increase = function() {
-    return ++num;
-};
+//카운트 숫자 상태 변경 함수
+const increase=()=>++num;
 
 console.log(increase());
-console.log(increase());
 
-num = 999;
+num=999;
 
-console.log(increase()); // 3?? => 1000
+console.log(increase()); //2
 */
 
-
-//=======================================
-
 /*
-
--- num이 지역변수라서 함수 호출시 재초기화되는 문제
-
-const increase = function() {
-    let num = 0; // 상태변수를 지역변수 처리
+const increase=()=>{
+    let num=0;  //상태변수를 지역변수 처리
     return ++num;
-};
+}
 
 console.log(increase());
 console.log(increase());
-console.log(increase()); // 3?
+console.log(increase());
 */
 
+const increaseClosure=()=>{
+    let num=0; //상태변수 (지역변수)
+    
+    function increase() {
+        return ++num;
+    }
+    return increase;  //increase() -> ++num 리턴 , increase -> increase함수 통으로 리턴
 
-//==================================
+};
 
-// const increaseClosure = function() {
+const result=increaseClosure();  //result에 함수가 담김
 
-//     let num = 0; // 상태 변수
+console.log(result());
+console.log(result());
+console.log(result());
 
-//     return function() {
-//         return ++num;
-//     };
-// };
 
-// const increase = increaseClosure();
+const result2=(()=>{
+    let num=0;
+    return ()=>++num;
+})();  //즉시 실행 함수  
 
-const increase = (() => {
-    let num = 0; // 상태 변수
-    return () => ++num;
-})();
-
-console.log(increase());
-console.log(increase());
-console.log(increase());
-console.log(increase());
-
-// const another = function() {
-//     return ++num;
-// }
-
-// another();
+console.log(result2());
+console.log(result2());
+console.log(result2());
+console.log(result2());
