@@ -48,6 +48,7 @@
                 tags += `
                     <li data-id=${id}>
                         제목: ${title}, 완료여부: ${done}
+                        <button class='del-btn'>삭제</button>
                     </li>
                 `;
             });
@@ -104,6 +105,31 @@
                 render(todoList);
             });
 
+        };
+
+        //삭제 처리 이벤트 핸들러 바인딩
+        document.querySelector('.todo-list').onclick=e=>{
+            
+            if(!e.target.matches('.todo-list .del-btn')){
+                return;
+            } //삭제 버튼인 경우에만 적용 
+            console.log(e.target.parentNode.dataset.id); //타겟 범위 버튼으로만 
+            //부모인 li 태그에서 id값을 얻어옴 그래야 delete 요청할 때 뒤에 id 붙여 보냄
+
+            //console.log('삭제버튼 클릭함~');
+            const id=e.target.parentNode.dataset.id;
+
+
+            fetch(`${API_BASE_URI}/${id}`,{   //id까지 요청 
+                method: 'DELETE'
+            })  
+            .then(res=>res.json())
+            .then(todoList=>{
+                render(todoList);
+            });
+
+
+            
         };
 
 
