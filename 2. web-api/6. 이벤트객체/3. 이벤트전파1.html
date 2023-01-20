@@ -24,7 +24,7 @@
 <body>
     
     <ul id="fruits">
-        <li id="apple">Apple</li>
+        <li id="apple">Apple</li>   
         <li id="banana">Banana</li>
         <li id="grape">Grape</li>
     </ul>
@@ -33,7 +33,7 @@
 
         const $fruits = document.getElementById('fruits');
 
-        $fruits.addEventListener('click', e => {
+        $fruits.addEventListener('click', e => {  
             console.log('ul태그 클릭이벤트 발생!');
             console.log('실제로 이벤트가 발생한 곳:', e.target);
             console.log('이벤트를 걸어놓은 곳:', e.currentTarget);

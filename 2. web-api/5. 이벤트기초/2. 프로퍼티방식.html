@@ -20,9 +20,9 @@
 
         const [$b1, $b2, $b3] = [...document.querySelectorAll('button')];
 
-        $b1.onclick = sayHello;
+        $b1.onclick = sayHello; //브라우저가 호출 , 함수를 통째로 넘김
         $b2.onclick = function() {
-            $b2.style.width= '150px';
+            $b2.style.width= '150px';   
         };
         $b3.onmouseenter = () => {
             $b3.style.background = 'red';
@@ -30,6 +30,7 @@
         $b3.onmouseleave = () => {
             $b3.style.background = 'yellow';
         };
+
         $b3.onmouseleave = sayHello;
 
         //이벤트핸들러 제거
